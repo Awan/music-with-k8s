@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: music-deployment
+spec:
+  selector:
+    matchLabels:
+      app: mpd
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: mpd
+    spec:
+      containers:
+      - name: mpd
+        image: music:latest
+        # comment it out if your image is hosted on docker hub or some other 
+        # registry. If you have image locally available, it will use it.
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 6600
+        - containerPort: 8000
+
