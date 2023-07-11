@@ -15,12 +15,6 @@ Create deployment:
 kubectl apply -f music-deployment.yaml
 ```
 
-Create service:
-
-```bash
-kubectl apply -f music-service.yaml
-```
-
 Now, using some music player client, add songs to playlist and play it. Use 
 `localhost` for server address and `7777` for port.
 
