@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mpd
-        image: abdullahkhabir/music:latest
+        image: abdullahkhabir/music:alpine
         # comment it out if your image is hosted on docker hub or some other 
         # registry. If you have image locally available, it will use it.
         #imagePullPolicy: Never
