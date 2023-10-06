@@ -1,14 +1,9 @@
-FROM alpine
+FROM alpine:latest
 LABEL maintainer="abdullah@abdullah.solutions"
-RUN apk update
-RUN apk add mpc mpd
-RUN mkdir -p /music/playlists
-RUN touch /music/database
-COPY configs/mpd.conf /etc/mpd.conf
-COPY configs/startup.sh /music/
-# copy some music files to image
-COPY music/nazia-tapay-rubab.mp3 /music/ 
-RUN chown -R mpd:audio /music
-# expose port 6600 for music player clients, 8000 for web stream
-EXPOSE 8000 6600
-CMD ["/bin/sh", "/music/startup.sh" ]
+RUN apk update && apk add mpc mpd
+WORKDIR /music
+COPY music/mpd.conf /etc/mpd.conf
+COPY music/* /music/
+RUN chown -R mpd:audio /music/
+EXPOSE 6600 8000
+CMD ["/bin/sh", "/music/start.sh"]
