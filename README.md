@@ -24,5 +24,5 @@ Once song is added and played, you can listen it using your web browser at
 If you want to deploy it with `helm`, there is a package.
 
 ```bash
-helm install Quran music-0.1.0.tgz
+helm install quran music-0.1.0.tgz
 ```
