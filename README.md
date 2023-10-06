@@ -1,3 +1,5 @@
+![image](https://github.com/Awan/music-with-k8s/assets/42554663/c297ae16-6e2e-466d-8c1e-42462e21b722)
+
 ### Music Server with k8s
 
 
